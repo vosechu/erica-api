@@ -1,4 +1,9 @@
 class ActivitiesController < ApplicationController
+  http_basic_authenticate_with(
+    name: ENV.fetch('username'),
+    password: ENV.fetch('password'),
+    except: [:index, :show])
+
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   # GET /activities

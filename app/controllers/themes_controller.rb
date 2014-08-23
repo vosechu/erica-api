@@ -1,4 +1,9 @@
 class ThemesController < ApplicationController
+  http_basic_authenticate_with(
+    name: ENV.fetch('username'),
+    password: ENV.fetch('password'),
+    except: [:index, :show])
+
   before_action :set_theme, only: [:show, :edit, :update, :destroy]
 
   # GET /themes
