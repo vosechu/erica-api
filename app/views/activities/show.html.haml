@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @activity.name
+%p
+  %b Description:
+  = @activity.description
+%p
+  %b Photo url:
+  = @activity.photo_url
+%p
+  %b Costume:
+  = @activity.costume
+%p
+  %b Chronology:
+  = @activity.chronology
+%p
+  %b Notes:
+  = @activity.notes
+%p
+  %b Theme:
+  = @activity.theme
+
+= link_to 'Edit', edit_activity_path(@activity)
+\|
+= link_to 'Back', activities_path
